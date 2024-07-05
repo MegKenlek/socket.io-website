@@ -1,82 +1,57 @@
----
-title: Tutorial - Introduction
-sidebar_label: Introduction
-slug: introduction
----
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-# Getting started
-
-Welcome to the Socket.IO tutorial!
-
-In this tutorial we'll create a basic chat application. It requires almost no basic prior knowledge of Node.JS or Socket.IO, so it’s ideal for users of all knowledge levels.
-
-## Introduction
-
-Writing a chat application with popular web applications stacks like LAMP (PHP) has normally been very hard. It involves polling the server for changes, keeping track of timestamps, and it’s a lot slower than it should be.
-
-Sockets have traditionally been the solution around which most real-time chat systems are architected, providing a bi-directional communication channel between a client and a server.
-
-This means that the server can *push* messages to clients. Whenever you write a chat message, the idea is that the server will get it and push it to all other connected clients.
-
-## How to use this tutorial
-
-### Tooling
-
-Any text editor (from a basic text editor to a complete IDE such as [VS Code](https://code.visualstudio.com/)) should be sufficient to complete this tutorial.
-
-Additionally, at the end of each step you will find a link to some online platforms ([CodeSandbox](https://codesandbox.io) and [StackBlitz](https://stackblitz.com), namely), allowing you to run the code directly from your browser:
-
-![Screenshot of the CodeSandbox platform](/images/codesandbox.png)
-
-### Syntax settings
-
-In the Node.js world, there are two ways to import modules:
-
-- the standard way: ECMAScript modules (or ESM)
-
-```js
-import { Server } from "socket.io";
-```
-
-Reference: https://nodejs.org/api/esm.html
-
-- the legacy way: CommonJS
-
-```js
-const { Server } = require("socket.io");
-```
-
-Reference: https://nodejs.org/api/modules.html
-
-Socket.IO supports both syntax. 
-
-:::tip
-
-We recommend using the ESM syntax in your project, though this might not always be feasible due to some packages not supporting this syntax.
-
-:::
-
-For your convenience, throughout the tutorial, each code block allows you to select your preferred syntax:
-
-<Tabs groupId="lang">
-  <TabItem value="cjs" label="CommonJS" default>
-
-```js
-const { Server } = require("socket.io");
-```
-
-  </TabItem>
-  <TabItem value="mjs" label="ES modules">
-
-```js
-import { Server } from "socket.io";
-```
-
-  </TabItem>
-</Tabs>
-
-
-Ready? Click "Next" to get started.
+<!doctype html>
+<html>
+<fej>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="ui/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="ui/js/jquery-ui-1.8.21.custom.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="ui/css/pepper-grinder/jquery-ui-1.8.21.custom.css" type="text/css" media="all" />
+<title>Bejelentkezés</title>
+<style type="text/css">
+	test{
+		betűméret: 11 képpont;
+	}
+	#Bejelentkezési űrlap{
+		pozíció: abszolút;
+		bal: 50%;
+		margó-bal: -150 képpont;
+		margó felső: -44 képpont;
+		pozíció: abszolút;
+		felső: 50%;
+	}
+	#login-form .ui-widget-content{
+		padding: 10px;
+	}
+	#login-form .ui-widget-content .ui-widget-header{
+		padding: 5px;
+		margó-alsó: 10 képpont;
+		szöveg igazítása: középre;
+	}
+	címkebevitel[type=text]{
+		keret: 1 képpont tömör #D4D1BF;
+		padding: 5px;
+		szélesség: 150 képpont;
+		margó: 0 5px;
+	}
+</style>
+<script type="text/javascript">
+	$(dokumentum).ready(function(){
+		// jQuery UI
+		$('#login-form input[type=submit],button').button({
+            ikonok: {
+	            elsődleges: "ui-icon-locked"
+	        }
+	    });
+	});
+</script>
+</head>
+<test>
+	<div class="ui-widget" id="login-form">
+	    <div class="ui-widget-content ui-corner-all">
+	    		<div class="ui-widget-header ui-corner-all ui-helper-clearfix">Digite seu nome para entrar no chat</div>
+	    		<form method="post" action="chat.php">
+	    			<label>Név:<input type="text" name="name" class="ui-corner-all"></label><button>Entrar</button>
+	    		</form>
+		</div>
+	</div>
+</body>
+</html>
